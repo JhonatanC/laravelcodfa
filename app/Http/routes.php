@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*Route::get('/articles',[
+    'as'   => 'articles',
+    'uses' => 'UserController@view'
+]);*/
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
