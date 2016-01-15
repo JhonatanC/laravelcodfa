@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /**
-         * Componentes
+         * Componentes externos
          */
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
@@ -209,9 +209,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         /**
-         * Componentes
+         * Componentes externos
          */
-
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 

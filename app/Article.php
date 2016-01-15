@@ -12,9 +12,9 @@ class Article extends Model implements SluggableInterface
     use SluggableTrait;
 
     protected $sluggable = [
-        // build_from = es de donde saca el slug
+        // build_from = es de que campo va a sacar el slug
         'build_from' => 'title',
-        // save_to = donde lo va a guardar
+        // save_to = donde va a guardar el slug
         'save_to'    => 'slug',
     ];
 

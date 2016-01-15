@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/articles',[
-    'as'   => 'articles',
-    'uses' => 'UserController@view'
-]);*/
+Route::group(['prefix' => 'admin'],function(){
 
+    Route::resource('users','UsersController');
+
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,6 +31,6 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+/*Route::group(['middleware' => ['web']], function () {
     //
-});
+});*/
