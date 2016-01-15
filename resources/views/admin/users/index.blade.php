@@ -5,7 +5,12 @@
 @section('content')
     <table class="table table-striped">
 
-        <a class="btn btn-info" href="{{ route('admin.users.create') }}">Registrar nuevo usuario</a>
+        <!--<div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <p>El usuario fue registrado con éxito! </p>
+        </div>-->
+
+        <a href="{{ route('admin.users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
 
         <thead>
             <th>id</th>
@@ -28,8 +33,8 @@
                         @endif
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="">Editar</a>
-                        <a class="btn btn-danger" href="">Eliminar</a>
+                        <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"> Editar</span></a>
+                        <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"> Eliminar</span></a>
                     </td>
                 </tr>
             @endforeach

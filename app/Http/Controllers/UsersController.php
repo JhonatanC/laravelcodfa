@@ -18,8 +18,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //$users = User::orderBy('id', 'ASC')->paginate(10);
-        $users = User::paginate(4);
+        $users = User::orderBy('id', 'ASC')->paginate(10);
+        //$users = User::paginate(10);
         return view('admin.users.index', compact('users'));
     }
 
@@ -44,8 +44,8 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
-        dd('Usuario creado');
-        //return redirect('');
+
+        return redirect()->route('admin.users.index');
     }
 
     /**
