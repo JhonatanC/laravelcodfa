@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Usuarios</a></li>
+                <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                 <li><a href="#">Categorías</a></li>
                 <li><a href="#">Artículos</a></li>
                 <li><a href="#">Imágenes</a></li>

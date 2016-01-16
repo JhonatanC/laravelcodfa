@@ -5,11 +5,6 @@
 @section('content')
     <table class="table table-striped">
 
-        <!--<div class="alert alert-success alert-dismissible fade in" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <p>El usuario fue registrado con éxito! </p>
-        </div>-->
-
         <a href="{{ route('admin.users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
 
         <thead>
@@ -33,8 +28,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"> Editar</span></a>
-                        <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"> Eliminar</span></a>
+                        <a href="{{ route('admin.users.edit',$user->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"> Editar</span></a>
+                        <a href="{{ route('admin.users.destroy',$user->id) }}" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"> Eliminar</span></a>
                     </td>
                 </tr>
             @endforeach

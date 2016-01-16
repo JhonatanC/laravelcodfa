@@ -5,15 +5,7 @@
 @section('content')
 
     {!! Form::open(['route' => 'admin.users.store', 'method' => 'POST', 'class' => 'form-horizontal' ]) !!}
-        <div class="form-group">
-            {!! Form::label('name','Nombre') !!}
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese su nombre', 'required']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('email','Correo Electrónico') !!}
-            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'ejemplo@gmail.com', 'required']) !!}
-        </div>
+        @include('admin.users.partials.form-users')
 
         <div class="form-group">
             {!! Form::label('password','Password') !!}
@@ -21,12 +13,8 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('type','Tipo de usuario') !!}
-            {!! Form::select('type',['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control','placeholder'=>'Seleccione un tipo']) !!}
-        </div>
-
-        <div class="form-group">
             {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
+            <a href="{{ route('admin.users.index') }}" class="btn btn-danger"> Regresar </a>
         </div>
     {!! Form::close() !!}
 
