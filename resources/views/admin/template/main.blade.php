@@ -10,9 +10,14 @@
 </head>
 <body>
 
+
+
     @include('admin.template.partials.nav')
 
+    {{-- @include('admin.template.partials.errors')  --}}
+
     <section class="container">
+        <h1>@yield('title')</h1>
         @yield('content')
     </section>
 
