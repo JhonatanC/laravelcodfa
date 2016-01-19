@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+/**
+ * importadas
+ */
 use App\Http\Requests\CategoryRequest;
 
 class CategoriesController extends Controller
@@ -96,6 +99,5 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->delete();
         return redirect()->route('admin.categories.index');
-
     }
 }
