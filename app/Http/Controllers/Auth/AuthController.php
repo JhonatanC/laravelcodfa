@@ -25,10 +25,16 @@ class AuthController extends Controller
 
     /**
      * Where to redirect users after login / registration.
-     * ---> Acción de redirección despues de hacer login <---
+     * Acción de redirección despues de hacer registro.
      * @var string
      */
-    protected $redirectTo = 'admin/home';
+    protected $redirectTo = '/home';
+
+    /**
+     * Acción de redirección despues de hacer login.
+     */
+    protected $redirectPath = 'admin/users';
+
 
     /**
      * Create a new authentication controller instance.
@@ -69,4 +75,5 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
 }

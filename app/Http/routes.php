@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'],function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
+
+    Route::auth();
+
+    Route::get('/', 'HomeController@index');
+
+    //Route::get('/','TestController@index');
 
     Route::resource('users','UsersController');
     Route::get('users/{id}/destroy', [
@@ -40,7 +46,6 @@ Route::group(['prefix' => 'admin'],function(){
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 

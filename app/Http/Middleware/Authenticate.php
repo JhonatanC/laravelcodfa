@@ -21,6 +21,9 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
+                /**
+                 * Si intenta acceder pero no esta logueado, se redirecciona  la siguiente ruta
+                 */
                 return redirect()->guest('login');
             }
         }
