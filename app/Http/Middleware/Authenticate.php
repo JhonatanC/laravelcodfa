@@ -24,7 +24,7 @@ class Authenticate
                 /**
                  * Si intenta acceder pero no esta logueado, se redirecciona  la siguiente ruta
                  */
-                return redirect()->guest('login');
+                return redirect()->guest('admin/login');
             }
         }
 

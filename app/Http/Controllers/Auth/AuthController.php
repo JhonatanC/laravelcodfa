@@ -25,7 +25,7 @@ class AuthController extends Controller
 
     /**
      * Where to redirect users after login / registration.
-     * Acción de redirección despues de hacer registro.
+     * Acción de redirección despues de hacer el formluario registro.
      * @var string
      */
     protected $redirectTo = '/home';
@@ -33,7 +33,7 @@ class AuthController extends Controller
     /**
      * Acción de redirección despues de hacer login.
      */
-    protected $redirectPath = 'admin/users';
+    protected $redirectPath = '/admin/home';
 
 
     /**
