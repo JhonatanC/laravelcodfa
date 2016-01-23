@@ -16,9 +16,9 @@ class TagsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $requests)
     {
-        $tags = Tag::orderBy('id','DESC')->paginate(5);
+        $tags = Tag::search($requests->name)->orderBy('id','DESC')->paginate(5);
         return view('admin.tags.index',compact('tags'));
     }
 

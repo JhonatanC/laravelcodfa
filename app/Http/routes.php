@@ -42,6 +42,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
         'as'    => 'admin.tags.destroy'
     ]);
 
+    Route::resource('articles','ArticlesController');
+    Route::get('articles/{id}/destroy',[
+        'uses'  => 'ArticlesController@destroy',
+        'as'    => 'admin.articles.destroy'
+    ]);
+
 });
 /*
 |--------------------------------------------------------------------------
@@ -53,8 +59,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-Route::group(['middleware' => 'web'], function () {
+/*Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
-});
+});*/

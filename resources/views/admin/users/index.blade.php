@@ -3,10 +3,20 @@
 @section('title','Lista de usuarios')
 
 @section('content')
+
+    <a href="{{ route('admin.users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
+
+    {!! Form::open(['route' => 'admin.users.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
+    <div class="input-group">
+        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar tag...']) !!}
+        <div class="input-group-btn">
+            {!! Form::submit('Buscar',['class' => 'btn btn-info']) !!}
+            <!--<button type="button" class="btn btn-info">Buscar</button>-->
+        </div>
+    </div>
+    {!! Form::close() !!}
+
     <table class="table table-striped">
-
-        <a href="{{ route('admin.users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
-
         <thead>
             <th>id</th>
             <th>name</th>

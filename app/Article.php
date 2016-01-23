@@ -25,7 +25,7 @@ class Article extends Model implements SluggableInterface
         'title',
         'content',
         'user_id',
-        'category_id'
+        'category_id',
     ];
 
     public function category()

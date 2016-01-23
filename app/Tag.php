@@ -18,4 +18,9 @@ class Tag extends Model
         return $this->belongsToMany('App\Article');
     }
 
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('name','LIKE',"%$name%");
+    }
+
 }

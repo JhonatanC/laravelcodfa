@@ -23,7 +23,7 @@
                     <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
                     <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('admin.categories.index') }}">Categorías</a></li>
-                    <li><a href="#">Artículos</a></li>
+                    <li><a href="{{ route('admin.articles.index') }}">Artículos</a></li>
                     <li><a href="#">Imágenes</a></li>
                     <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
                 </ul>
