@@ -4,20 +4,7 @@
 
 @section('content')
     {!! Form::open(['route' => 'admin.articles.store', 'method' => 'POST', 'files' => true]) !!}
-        <div class="form-group">
-            {!! Form::label('title', 'Título') !!}
-            {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Título del Artículo', 'required']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('category_id', 'Categoria') !!}
-            {!! Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'selecciones una categoría', 'required']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('content', 'Contenido') !!}
-            {!! Form::textarea('content', null, ['class' => 'form-control','required']) !!}
-        </div>
+        @include('admin.articles.partials.form-article')
 
         <div class="form-group">
             {!! Form::label('image', 'Imagen') !!}
@@ -25,12 +12,25 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('tags', 'Tags') !!}
-            {!! Form::select('tags', $tags, null, ['class' => 'form-control', 'placeholder' => 'Selecciones un tag' ,'required']) !!}
-        </div>
-
-        <div class="form-group">
             {!! Form::submit('Agregar Artículo', ['class' => 'btn btn-primary']) !!}
+            <a class="btn btn-danger" href="{{ route('admin.articles.index') }}"> Cancelar </a>
         </div>
     {!! Form::close() !!}
+@endsection
+
+@section('js')
+    <script>
+        $('.select-tag').chosen({
+            placeholder_text_multiple: 'selecciones un máximo de3 tags',
+            max_select_options: 3,
+            search_contains: true
+        });
+
+        $('.select-category').chosen({
+            placeholder_text_single: 'Seleccione una categoría'
+        });
+
+        $('.textarea-content').trumbowyg();
+
+    </script>
 @endsection

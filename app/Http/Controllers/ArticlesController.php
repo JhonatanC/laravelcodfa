@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ArticleRequest;
 
 class ArticlesController extends Controller
 {
@@ -19,9 +20,10 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $articles = Article::search($request->title)->orderBy('created_at','ASC')->paginate(5);
+        return view('admin.articles.index',compact('articles'));
     }
 
     /**
@@ -62,9 +64,13 @@ class ArticlesController extends Controller
             'user_id' => Auth::user()->id,
             'category_id' => $request->category_id
         ]);*/
+        // NOTA : Se deben instanciar los modelos para poder acceder a las propiedades que no están en el formlario
         $article = new Article($request->all());
         $article->user_id = Auth::user()->id;
         $article->save();
+
+        //El método "sync", nos permite llenar la tabla pivote, recibe como parámetro un array con los datos que se van a rellenar
+        $article->tags()->sync($request->tags);
 
         /*$image = Image::create([
             'name' => $name,
@@ -74,6 +80,8 @@ class ArticlesController extends Controller
         $image->name = $name;
         $image->article()->associate($article);
         $image->save();
+
+        return redirect()->route('admin.articles.index');
     }
 
     /**
@@ -95,7 +103,10 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $tags = Tag::orderBy('name','DESC')->lists('name','id');
+        $categories = Category::orderBy('name','DESC')->lists('name','id');
+        return view('admin.articles.edit',compact('categories','article','tags'));
     }
 
     /**
