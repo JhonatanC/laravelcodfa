@@ -15,5 +15,5 @@
 
 <div class="form-group">
     {!! Form::label('tags', 'Tags') !!}
-    {!! Form::select('tags[]', $tags, null, ['class' => 'form-control select-tag', 'multiple' ,'required']) !!}
+    {!! Form::select('tags[]', $tags, $my_tags, ['class' => 'form-control select-tag', 'multiple' ,'required']) !!}
 </div>

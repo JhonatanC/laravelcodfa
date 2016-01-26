@@ -3,7 +3,7 @@
 @section('title','Editar Artículo')
 
 @section('content')
-    {!! Form::model($article,['route' => ['admin.articles.update',$article->id], 'method' => 'GET', 'files' => true]) !!}
+    {!! Form::model($article,['route' => ['admin.articles.update',$article->id], 'method' => 'PUT']) !!}
         @include('admin.articles.partials.form-article')
 
         <div class="form-group">

@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @include('admin.template.partials.message')
+
     <a href="{{ route('admin.articles.create') }}" class="btn btn-info">Crear nuevo Artículo</a>
 
     {!! Form::open(['route' => 'admin.articles.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}

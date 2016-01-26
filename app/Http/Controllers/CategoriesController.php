@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
  * importadas
  */
 use App\Http\Requests\CategoryRequest;
+use Illuminate\Support\Facades\Session;
 
 class CategoriesController extends Controller
 {
@@ -45,6 +46,8 @@ class CategoriesController extends Controller
     {
         $category = Category::create($request->all());
         $category->save();
+
+        Session::flash('message', "La Categoría " . $request->name . " fue creado exitosamente!");
 
         return redirect()->route('admin.categories.index');
     }
