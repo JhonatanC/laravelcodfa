@@ -48,6 +48,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
         'as'    => 'admin.articles.destroy'
     ]);
 
+    Route::get('images',[
+        'uses' => 'ImagesController@index',
+        'as'   => 'images'
+    ]);
+
 });
 /*
 |--------------------------------------------------------------------------

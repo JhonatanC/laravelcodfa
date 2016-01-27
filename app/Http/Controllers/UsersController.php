@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Laracasts\Flash\Flash;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
 {
@@ -49,6 +50,8 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
+
+        Session::flash('message_create', "El usuario - " . $request->name . " - fue creado exitosamente!");
 
         return redirect()->route('admin.users.index');
     }
@@ -90,6 +93,8 @@ class UsersController extends Controller
         $user->fill($request->all());
         $user->save();
 
+        Session::flash('message_update', "El Usuario - " . $request->name . " - fue editado correctamente!");
+
         return redirect()->route('admin.users.index');
     }
 
@@ -103,6 +108,8 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->delete();
+
+        Session::flash('message_delete', "El usuario - " . $user->name . " - fue eliminado!");
 
         return redirect()->route('admin.users.index');
     }

@@ -74,7 +74,7 @@ class ArticlesController extends Controller
         $image->article()->associate($article);
         $image->save();
 
-        Session::flash('message', "El Artículo " . $request->title . " fue creado exitosamente!");
+        Session::flash('message_create', "El Artículo - " . $request->title . " - fue creado exitosamente!");
 
         return redirect()->route('admin.articles.index');
     }
@@ -126,7 +126,7 @@ class ArticlesController extends Controller
 
         $article->tags()->sync($request->tags);
 
-        Session::flash('message', "El Artículo " . $request->title . " fue editado exitosamente!");
+        Session::flash('message_update', "El Artículo - " . $request->title . " - fue editado exitosamente!");
 
         return redirect()->route('admin.articles.index');
     }
@@ -142,7 +142,7 @@ class ArticlesController extends Controller
         $article = Article::find($id);
         $article->delete();
 
-        Session::flash('message', "El Artículo " . $article->title . " fue eliminado!");
+        Session::flash('message_delete', "El Artículo - " . $article->title . " - fue eliminado!");
 
         return redirect()->route('admin.articles.index');
     }

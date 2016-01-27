@@ -3,6 +3,9 @@
 @section('title','Listado de Categorias')
 
 @section('content')
+
+    @include('admin.template.partials.message')
+
     <table class="table table-striped">
 
         <a href="{{ route('admin.categories.create') }}" class="btn btn-info">Registrar nueva categoria</a>

@@ -3,6 +3,9 @@
 @section('title','Listado de Tags')
 
 @section('content')
+
+    @include('admin.template.partials.message')
+
     <a class="btn btn-info" href="{{ route('admin.tags.create') }}"> Registrar nuevo tag </a>
 
     {!! Form::open(['route' => 'admin.tags.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}

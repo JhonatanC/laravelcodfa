@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @include('admin.template.partials.message')
+
     <a href="{{ route('admin.users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
 
     {!! Form::open(['route' => 'admin.users.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}

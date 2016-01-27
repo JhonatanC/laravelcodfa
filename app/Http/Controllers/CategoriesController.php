@@ -47,7 +47,7 @@ class CategoriesController extends Controller
         $category = Category::create($request->all());
         $category->save();
 
-        Session::flash('message', "La Categoría " . $request->name . " fue creado exitosamente!");
+        Session::flash('message_create', "La Categoría - " . $request->name . " - fue creado exitosamente!");
 
         return redirect()->route('admin.categories.index');
     }
@@ -88,6 +88,8 @@ class CategoriesController extends Controller
         $category->fill($request->all());
         $category->save();
 
+        Session::flash('message_update', "La Categoría - " . $request->name . " - fue editado exitosamente!");
+
         return redirect()->route('admin.categories.index');
     }
 
@@ -101,6 +103,9 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
+
+        Session::flash('message_delete', "La categoría - " . $category->name . " - fue eliminada!");
+
         return redirect()->route('admin.categories.index');
     }
 }

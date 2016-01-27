@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TagRequest;
+use Illuminate\Support\Facades\Session;
 
 class TagsController extends Controller
 {
@@ -42,6 +43,9 @@ class TagsController extends Controller
     {
         $tag = Tag::create($request->all());
         $tag->save();
+
+        Session::flash('message_create', "El tag - " . $request->name . " - fue creado exitosamente!");
+
         return redirect()->route('admin.tags.index');
     }
 
@@ -81,6 +85,8 @@ class TagsController extends Controller
         $tag->fill($request->all());
         $tag->save();
 
+        Session::flash('message_update', "El tag - " . $request->name . " - fue editado correctamente!");
+
         return redirect()->route('admin.tags.index');
     }
 
@@ -94,6 +100,9 @@ class TagsController extends Controller
     {
         $tag = Tag::find($id);
         $tag->delete();
+
+        Session::flash('message_delete', "El usuario - " . $tag->name . " - fue eliminado!");
+
         return redirect()->route('admin.tags.index');
     }
 }
