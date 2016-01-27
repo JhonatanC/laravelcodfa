@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'frontend', function () {
+    return view('front.index');
+}]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
 
     Route::auth();
 
     Route::get('/', 'HomeController@index');
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', [
+        'uses' => 'HomeController@index',
+        'as'   => 'inicio'
+    ]);
 
     //Route::get('/','TestController@index');
 

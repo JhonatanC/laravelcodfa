@@ -20,7 +20,7 @@
                 </ul>
             @else
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li><a href="{{ route('inicio') }}">Inicio <span class="sr-only">(current)</span></a></li>
                     <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('admin.categories.index') }}">Categorías</a></li>
                     <li><a href="{{ route('admin.articles.index') }}">Artículos</a></li>
@@ -29,6 +29,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('frontend') }}" target="_blank">Página Principal</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
