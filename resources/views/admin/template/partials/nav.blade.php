@@ -14,6 +14,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             @if (Auth::guest())
+
+                <ul class="nav navbar-nav nav navbar-nav col-md-5">
+                    <li><a href="">Artículos Recientes</a></li>
+                    <li><a href="">Colaboradores Destacados</a></li>
+                    <li><a href="">Comunidad</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
