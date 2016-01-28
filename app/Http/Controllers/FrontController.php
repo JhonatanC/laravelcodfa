@@ -11,7 +11,9 @@ use App\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
-
+    /**
+     * Fecha de la publicación en español
+     */
     public function __construct()
     {
         Carbon::setLocale('es');

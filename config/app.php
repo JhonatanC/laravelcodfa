@@ -157,6 +157,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /**
+         * Provider propios
+         */
+        App\Providers\ComposerServiceProvider::class,
+
+        /**
          * Componentes externos
          */
         Collective\Html\HtmlServiceProvider::class,
