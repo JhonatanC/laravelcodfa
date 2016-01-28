@@ -19,7 +19,7 @@ class TagsController extends Controller
      */
     public function index(Request $requests)
     {
-        $tags = Tag::search($requests->name)->orderBy('id','DESC')->paginate(5);
+        $tags = Tag::search($requests->name)->orderBy('id','DESC')->paginate(8);
         return view('admin.tags.index',compact('tags'));
     }
 

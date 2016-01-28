@@ -23,7 +23,7 @@ class ArticlesController extends Controller
      */
     public function index(Request $request)
     {
-        $articles = Article::search($request->title)->orderBy('created_at','DESC')->paginate(5);
+        $articles = Article::search($request->title)->orderBy('created_at','DESC')->paginate(8);
         return view('admin.articles.index',compact('articles'));
     }
 

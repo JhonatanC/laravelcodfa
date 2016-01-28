@@ -17,7 +17,6 @@
     {{-- @include('admin.template.partials.errors')  --}}
 
     <section class="container">
-        <h1>@yield('title')</h1>
         @yield('content')
     </section>
 

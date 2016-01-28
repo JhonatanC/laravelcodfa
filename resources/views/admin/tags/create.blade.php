@@ -1,15 +1,25 @@
 @extends('admin.template.main')
 
-@section('title','Agregar tag')
-
 @section('content')
-    {!! Form::open(['route' => 'admin.tags.store', 'method' => 'POST']) !!}
-        @include('admin.tags.partials.form-tag')
-
-        <div class="form-group">
-            {!! Form::submit('Crear Tag',['class' => 'btn btn-primary']) !!}
-            <a class="btn btn-danger" href="{{ route('admin.tags.index') }}"> Cancelar </a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>
+                Agregar tag
+            </strong>
         </div>
+        <div class="panel-body">
+            {!! Form::open(['route' => 'admin.tags.store', 'method' => 'POST']) !!}
+            @include('admin.tags.partials.form-tag')
 
-    {!! Form::close() !!}
+            <div class="form-group">
+                {!! Form::submit('Crear Tag',['class' => 'btn btn-primary']) !!}
+                <a class="btn btn-danger" href="{{ route('admin.tags.index') }}"> Cancelar </a>
+            </div>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+
+
 @endsection
