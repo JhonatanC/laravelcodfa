@@ -18,4 +18,15 @@ class Category extends Model
         return $this->hasMany('App\Article');
     }
 
+    public function scopeSearchCategory($query, $name)
+    {
+        /**
+         * recibe 3 parametros:
+         * 1. Nombre de la columna en la base de datos
+         * 2. El condicional.
+         * 3. El nombre
+         */
+        return $query->where('name','=',$name);
+    }
+
 }

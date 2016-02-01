@@ -1,12 +1,112 @@
+﻿*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
 body{
-    background: #f2f2f2;
+	background: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
-    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    font-size: 16px;
 }
-img{
-    max-width: 100%;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', serif;
 }
+
+nav{
+    font-family: 'Courgette', cursive;
+    font-size: 18px;
+}
+
 ul{
     list-style: none;
-    padding: 0;
+    margin: 0;
 }
+
+img, video {
+	max-width: 100%;
+	width: auto;
+}
+
+footer{
+    background: #022742;
+    color: #ffffff;
+    bottom: 0;
+    left: 0;
+    padding: 8px 0px;
+    width: 100%;
+}
+footer h5{
+    margin-top: 0;
+}
+
+.navbar-default{
+    background-color: #CC0000 !important;
+    border-color: #CC0000 !important;
+    border-radius: 0px !important;
+}
+
+.navbar-nav li a{
+    color: #ffffff !important;
+}
+
+.active{
+    background-color: #990404 !important;
+}
+
+.code{
+    background: #191919;
+    height: 200px;
+    display: block;
+    width: 100%;
+}
+
+.avatar{
+    border-radius: 50%;
+}
+
+.panel-background-red{
+    background-color: #CC0000 !important;
+    color: #ffffff !important;
+}
+
+.box-panel-external{
+    background: #F2F2F2;
+    border: 1px solid #E6E6E6;
+    padding: .4em;
+}
+
+.box-panel-internal{
+    background: #ffffff;
+}
+
+.navbar-brand{
+    color: #ffffff !important;
+    font-size: 22px;
+}
+
+
+/* FUENTES
+
+font-family: 'Orienta', sans-serif;
+
+font-family: 'Niconne', cursive;
+
+font-family: 'Port Lligat Slab', serif;
+
+font-family: 'Dancing Script', cursive;
+
+font-family: 'Playball', cursive;
+
+font-family: 'Satisfy', cursive;
+
+font-family: 'Special Elite', cursive;
+
+font-family: 'Berkshire Swash', cursive;
+
+font-family: 'Sansita One', cursive;
+
+*/

@@ -20,11 +20,31 @@ Route::get('/',[
     'as' => 'frontend'
 ]);
 
+Route::get('articles',[
+    'uses' => 'FrontController@viewArticle',
+    'as'   => 'articles'
+]);
+
+Route::get('categories/{name}',[
+    'uses' => 'FrontController@searchCategory',
+    'as'  => 'front.search.category'
+]);
+
+Route::get('tags/{name}',[
+    'uses' => 'FrontController@searchTag',
+    'as'  => 'front.search.tag'
+]);
+
+Route::get('articles/{slug}',[
+    'uses' => 'FrontController@contentArticle',
+    'as'  => 'front.view.article'
+]);
+
 /**
  * Rutas del panel de administración
  */
 
-Route::group(['prefix' => 'admin', 'middleware' => 'web'],function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['web','admin']],function(){
 
     Route::auth();
 

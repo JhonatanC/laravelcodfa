@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Article;
 use App\Category;
 use App\Tag;
 use Illuminate\Contracts\View\View;

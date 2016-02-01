@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Laravelcodfa</a>
+            <a class="navbar-brand" href="{{ route('frontend') }}">JhonatanDev</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,10 +16,9 @@
             @if (Auth::guest())
 
                 <ul class="nav navbar-nav nav navbar-nav col-md-5">
-                    <li><a href="">Artículos Recientes</a></li>
-                    <li><a href="">Colaboradores Destacados</a></li>
-                    <li><a href="">Comunidad</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="{{ route('frontend') }}">Inicio</a></li>
+                    <li><a href="{{ route('articles') }}">Artículos</a></li>
+                    <li><a href="#">Contacto</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

@@ -19,7 +19,12 @@ class ComposerServiceProvider extends ServiceProvider
          * 1. la vista o las vistas.
          * 2. Namespace del view composer
          */
-        View::composer(['front.index'],'App\Http\ViewComposers\AsideComposer');
+        View::composer(
+            [
+                'front.index',
+                'front.article',
+                'front.content',
+            ],'App\Http\ViewComposers\AsideComposer');
     }
 
     /**
